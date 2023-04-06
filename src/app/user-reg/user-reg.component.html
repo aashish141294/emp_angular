@@ -1,0 +1,121 @@
+<body style="background-color: whitesmoke;background-color: rgb(243, 245, 226);background-repeat: no-repeat;background-size: cover;width: 100%;">
+  <br>
+  <br>
+  <br>
+  <br>
+  <div class="modal-dialog" style="width: 600px;">
+    <div class="modal-content" style="background-color:whitesmoke;background-color: rgb(237, 237, 137);
+    background-repeat: no-repeat;background-size: cover;width:720px;margin-left:-150px;">
+        <div class="modal-header text-center">
+            <h4 class="modal-title" style="padding-left:255px;font-family:bold;font-size:xx-large;">User Registration</h4>
+        </div>
+        <div *ngIf = "success == true; then SUCC else FAIL"></div>
+        <ng-template #SUCC><p style="color: green; text-align: center;">{{ message}}</p></ng-template>
+        <ng-template #FAIL><p style="color: red;text-align: center;">{{ message}}</p></ng-template>
+
+        <form>
+            <div class="modal-body" style="padding: 10px;">
+                <div class="form-group row">
+                    <label class="col-lg-2 form-control-label">First Name<span style="color: red;">*</span></label>
+                    <div class="col-lg-4">
+                        <input [(ngModel)]="form.FirstName" name="FirstName" placeholder="Enter Your First Name">
+                        <span style="color: red;">   {{ inputError.FirstName }} </span>
+                    </div>
+
+                    <label class="col-lg-2 form-control-label">Last Name<span style="color: red;">*</span></label>
+                    <div class="col-lg-4">
+                        <input [(ngModel)]="form.LastName" name="LastName" placeholder="Enter Your last Name">
+                        <span style="color: red;">   {{ inputError.LastName }}</span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-lg-2 form-control-label">Email Id<span style="color: red;">*</span></label>
+                    <div class="col-lg-4">
+                        <input [(ngModel)]="form.Email" name="Email" placeholder="Enter Your Email Id">
+                        <span style="color: red;">{{ inputError.Email }}</span>
+                    </div>
+
+                    <label class="col-lg-2 form-control-label">Password<span style="color: red;">*</span></label>
+                    <div class="col-lg-4">
+                        <input [(ngModel)]="form.Password" name="Password" placeholder="Enter Your Password">
+                        <span style="color: red;">{{ inputError.Password }}</span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-lg-2 form-control-label">Confirm Password<span style="color:Red">*</span></label>
+                    <div class="col-lg-4">
+                        <input [(ngModel)]="form.ConfirmPassword" name="ConfirmPassword" type="password" placeholder="Enter your Password">
+                        <span style="color:red">{{ inputError.ConfirmPassword }}</span>
+                    </div>
+
+                    <label class="col-lg-2 form-control-label">Gender<span style="color:Red">*</span></label>
+                    <div class="col-lg-4">
+                        <select [(ngModel)]="form.Gender" name="Gender" style="width:200px;height:30px;">
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                        </select>
+                        <span style="color:Red">{{ inputError.Gender }}</span>
+                    </div>
+                </div>
+                <div class="form-group row">
+
+                    <label class="col-lg-2 form-control-label">Country<span style="color:Red">*</span></label>
+                    <div class="col-lg-4">
+                        <select [(ngModel)]="form.Country" name="Country" style="width:200px;height:30px;">
+                            <option value="India">India</option>
+                            <option value="Russia">Russia</option>
+                        </select>
+                        <span style="color:red">{{ inputError.Country }}</span>
+                    </div>
+                
+
+          
+                    <label class="col-lg-2 form-control-label">State<span style="color:red">*</span></label>
+                    <div class="col-lg-4">
+                        <select [(ngModel)]="form.State" name="State" style="width:200px;height:30px;">
+                            <option value="MadhyaPradesh">MadhyaPradesh</option>
+                            <option value="Maharastra">Maharastra</option>
+                        </select>
+                        <span style="color:Red">{{ inputError.State }}</span>
+                    </div>
+                </div>
+
+                    
+            
+
+                <div class="form-group row">
+                    <label class="col-lg-2">City<span style="color:Red">*</span></label>
+                    <div class="col-lg-4">
+                        <select [(ngModel)]="form.City" name="City" style="width:200px;height:30px;">
+                            <option value="Indore">Indore</option>
+                            <option value="Khargone">Khargone</option>
+                        </select>
+                        <span style="color:red">{{ inputError.City }}</span>
+                    </div>
+
+                    <label class="col-lg-2 form-control-label">Zip<span style="color:Red">*</span></label>
+                    <div class="col-lg-4">
+                        <input [(ngModel)]="form.Zip" name="Zip" type="password" placeholder="Enter your Zip">
+                        <span style="color:red">{{ inputError.Zip }}</span>
+                    </div>
+
+                </div>
+
+                <div class="row">
+                    <div class="col-md-3"></div>
+                    <div class="col-md-3">
+                        <button (click)="save()" type="submit" class="btn btn-success form-control">Save</button>
+                    </div>
+                    <div class="col-md-3">
+                        <button (click)="reset()" type="reset" class="btn btn-primary form-control">Reset</button>
+                    </div>
+                </div>
+
+            </div>
+        </form>
+
+    </div>
+
+  </div>  
+
+</body>
